@@ -9,6 +9,22 @@
         <a class="nav-item nav-link" href="/urls">My URLs</a>
         <a class="nav-item nav-link" href="/urls/new">Create New URL</a>
       </div>
+   
+      
+      <% if(user){ %>
+        <form  method="POST" action = "/logout" >
+          <%="loged in  AS :TinyApp User   " %>
+          <%=  user.email %>
+        <button  class="outline-light"  type ="submit">logout</button> 
+        
+      </form>
+     <% } else { %>
+      <ul>
+      <li><a href='/login' sytle = "margin : 2em">Login</a></li> 
+      <li> <a href='/register' sytle = "margin : 2em">Register</a></li>
+      </ul>
+    <% } %>
     </div>
+
   </nav>
 </header>
