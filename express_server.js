@@ -43,8 +43,10 @@ app.get('/',(req, res) => {
   const user = users[userID];
   if (!user) {
     res.redirect("/login");
+  } else{
+    res.redirect('/urls');
   }
-  res.redirect('/urls');
+ 
 });
 
 app.get("/urls", (req, res) => {
