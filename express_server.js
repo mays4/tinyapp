@@ -208,10 +208,12 @@ app.post("/logout",(req,res)=> {
   res.redirect("/urls");
 });
 
-app.listen(PORT || 8000, () => {
-  console.log(`Example app listening on port ${PORT}!`);
+// app.listen(PORT || 8000, () => {
+//   console.log(`Example app listening on port ${PORT}!`);
 
+// });
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
 
 
