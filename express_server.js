@@ -76,10 +76,13 @@ app.get("/urls/new", (req, res) => {
   const user = users[userID];
   if (!user) {
     res.redirect("/login");
+
   }else{
   const templateVars = {user};
   res.render("urls_new",templateVars);
   }
+
+ 
 });
 app.get("/urls/:shortURL", (req, res) => {
   //find out which userID the shortURL belong to
@@ -205,4 +208,8 @@ app.post("/logout",(req,res)=> {
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
+
 });
+
+});
+
